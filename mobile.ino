@@ -35,6 +35,14 @@ int SW3state = 0; // variable for state of switch 3
 int SW4state = 0; // variable for state of switch 4
 int SW5state = 0; // variable for state of switch 5
 
+//set up last states for switches
+
+int SW1last = 0; // last state of switch 1
+int SW2last = 0; // last state of switch 2
+int SW3last = 0; // last state of switch 3
+int SW4last = 0; // last state of switch 4
+int SW5last = 0; // last state of switch 5
+
 // set pinmodes for the LEDs (outputs) and Switches (inputs)
 
 void setup(){
@@ -70,7 +78,9 @@ void loop() {
  
   }
   
-  
+  if (SW1state != SW1ast) {
+  goto all5;
+  }
 // check to see if switch 2 is on. If so, commence flashing
 
  if (SW2state == HIGH) { // if switch 2 only on just flash LED 2 twice
@@ -150,6 +160,11 @@ if (SW3state == HIGH) { // if switch 3 only on just flash LED 3 thrice
    delay(longtimer);
    
   }  
+  all5:
+  
+  SW1last = SWstate;
+  SW1last = SWstate;
+  SW1last = SWstate;
   
    // check to see if all switches are on. If so, commence awesome flashing
   
