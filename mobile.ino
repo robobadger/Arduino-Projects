@@ -199,6 +199,7 @@ if (SW3state == HIGH) { // if switch 3 only on just flash LED 3 thrice
   goto all5;
   }
   
+  // check to see if switch 4 is on. If so, commence flashing
   
  if (SW4state == HIGH) { // if switch 4 only on just flash LED 4 fourice
   
@@ -249,6 +250,7 @@ if (SW3state == HIGH) { // if switch 3 only on just flash LED 3 thrice
   goto all5;
   }
   
+  // check to see if switch 5 is on. If so, commence flashing
   
   if (SW5state == HIGH) { // if switch 5 only on just flash LED 5 fivice
   
