@@ -76,9 +76,34 @@ void loop() {
    digitalWrite(LED1, LOW);
    delay(longtimer);
  
-  }
+  // read all the switch states
   
-  if (SW1state != SW1ast) {
+  SW1state = digitalRead(SW1); // read the state of switch 1
+  SW2state = digitalRead(SW2); // read the state of switch 2
+  SW3state = digitalRead(SW3); // read the state of switch 3
+  SW4state = digitalRead(SW4); // read the state of switch 4
+  SW5state = digitalRead(SW5); // read the state of switch 5
+ 
+ 
+  }
+  // check last button states
+  if (SW1state != SW1last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW2state != SW2last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW3state != SW3last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW4state != SW4last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW5state != SW5last) {
   goto all5;
   }
 // check to see if switch 2 is on. If so, commence flashing
@@ -95,8 +120,38 @@ void loop() {
    delay(longtimer);
    
   }
+   
+    // read all the switch states
+  
+  SW1state = digitalRead(SW1); // read the state of switch 1
+  SW2state = digitalRead(SW2); // read the state of switch 2
+  SW3state = digitalRead(SW3); // read the state of switch 3
+  SW4state = digitalRead(SW4); // read the state of switch 4
+  SW5state = digitalRead(SW5); // read the state of switch 5
+   
+   
+    // check last button states
+  if (SW1state != SW1last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW2state != SW2last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW3state != SW3last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW4state != SW4last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW5state != SW5last) {
+  goto all5;
+  }
         
-  // check to see if switch 2 is on. If so, commence flashing
+  // check to see if switch 3 is on. If so, commence flashing
 
 if (SW3state == HIGH) { // if switch 3 only on just flash LED 3 thrice
   
@@ -114,6 +169,36 @@ if (SW3state == HIGH) { // if switch 3 only on just flash LED 3 thrice
    delay(longtimer);
    
   }
+  
+   // read all the switch states
+  
+  SW1state = digitalRead(SW1); // read the state of switch 1
+  SW2state = digitalRead(SW2); // read the state of switch 2
+  SW3state = digitalRead(SW3); // read the state of switch 3
+  SW4state = digitalRead(SW4); // read the state of switch 4
+  SW5state = digitalRead(SW5); // read the state of switch 5
+  
+   // check last button states
+  if (SW1state != SW1last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW2state != SW2last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW3state != SW3last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW4state != SW4last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW5state != SW5last) {
+  goto all5;
+  }
+  
   
  if (SW4state == HIGH) { // if switch 4 only on just flash LED 4 fourice
   
@@ -135,6 +220,35 @@ if (SW3state == HIGH) { // if switch 3 only on just flash LED 3 thrice
    delay(longtimer);
    
   }  
+  // read all the switch states
+  
+  SW1state = digitalRead(SW1); // read the state of switch 1
+  SW2state = digitalRead(SW2); // read the state of switch 2
+  SW3state = digitalRead(SW3); // read the state of switch 3
+  SW4state = digitalRead(SW4); // read the state of switch 4
+  SW5state = digitalRead(SW5); // read the state of switch 5
+  
+   // check last button states
+  if (SW1state != SW1last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW2state != SW2last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW3state != SW3last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW4state != SW4last) {
+  goto all5;
+  }
+   // check last button states
+  if (SW5state != SW5last) {
+  goto all5;
+  }
+  
   
   if (SW5state == HIGH) { // if switch 5 only on just flash LED 5 fivice
   
@@ -162,9 +276,11 @@ if (SW3state == HIGH) { // if switch 3 only on just flash LED 3 thrice
   }  
   all5:
   
-  SW1last = SWstate;
-  SW1last = SWstate;
-  SW1last = SWstate;
+  SW1last = SW1state;
+  SW2last = SW2state;
+  SW3last = SW3state;
+  SW4last = SW4state;
+  SW5last = SW5state;
   
    // check to see if all switches are on. If so, commence awesome flashing
   
