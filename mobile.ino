@@ -19,7 +19,8 @@ const int LED2 = 11;
 const int LED3 = 10;
 const int LED4 = 9;
 const int LED5 = 8;
-const int timer = 100;
+const int timer = 250;
+const int longtimer = 1000;
 const int SW1 = A0;
 const int SW2 = A1;
 const int SW3 = A2;
@@ -57,6 +58,7 @@ void loop() {
   SW4state = digitalRead(SW4); // read the state of switch 4
   SW5state = digitalRead(SW5); // read the state of switch 5
   
+  
   // check to see if switch 1 is on. If so, commence flashing
   
   if (SW1state == HIGH) { // if switch 1 on, flash LED 1
@@ -64,14 +66,14 @@ void loop() {
    digitalWrite(LED1, HIGH);
    delay(timer);
    digitalWrite(LED1, LOW);
-   delay(timer);
-   delay(timer);
-   delay(timer);
+   delay(longtimer);
+ 
   }
-
+  
+  
 // check to see if switch 2 is on. If so, commence flashing
 
-  if (SW2state == HIGH) { // if switch 2 only on just flash LED 2 twice
+ if (SW2state == HIGH) { // if switch 2 only on just flash LED 2 twice
   
    digitalWrite(LED2, HIGH);
    delay(timer);
@@ -80,15 +82,81 @@ void loop() {
    digitalWrite(LED2, HIGH);
    delay(timer);
    digitalWrite(LED2, LOW);
-   delay(timer);
-   delay(timer);
-   delay(timer);
+   delay(longtimer);
    
-    
   }
         
-  if (SW1state == HIGH && SW2state == HIGH) // if both switch 1 & 2 on flash all 5
-        {
+  // check to see if switch 2 is on. If so, commence flashing
+
+if (SW3state == HIGH) { // if switch 3 only on just flash LED 3 thrice
+  
+   digitalWrite(LED3, HIGH);
+   delay(timer);
+   digitalWrite(LED3, LOW);
+   delay(timer);
+   digitalWrite(LED3, HIGH);
+   delay(timer);
+   digitalWrite(LED3, LOW);
+   delay(timer);
+   digitalWrite(LED3, HIGH);
+   delay(timer);
+   digitalWrite(LED3, LOW);
+   delay(longtimer);
+   
+  }
+  
+ if (SW4state == HIGH) { // if switch 4 only on just flash LED 4 fourice
+  
+   digitalWrite(LED4, HIGH);
+   delay(timer);
+   digitalWrite(LED4, LOW);
+   delay(timer);
+   digitalWrite(LED4, HIGH);
+   delay(timer);
+   digitalWrite(LED4, LOW);
+   delay(timer);
+   digitalWrite(LED4, HIGH);
+   delay(timer);
+   digitalWrite(LED4, LOW);
+   delay(timer);
+   digitalWrite(LED4, HIGH);
+   delay(timer);
+   digitalWrite(LED4, LOW);
+   delay(longtimer);
+   
+  }  
+  
+  if (SW5state == HIGH) { // if switch 5 only on just flash LED 5 fivice
+  
+   digitalWrite(LED5, HIGH);
+   delay(timer);
+   digitalWrite(LED5, LOW);
+   delay(timer);
+   digitalWrite(LED5, HIGH);
+   delay(timer);
+   digitalWrite(LED5, LOW);
+   delay(timer);
+   digitalWrite(LED5, HIGH);
+   delay(timer);
+   digitalWrite(LED5, LOW);
+   delay(timer);
+   digitalWrite(LED5, HIGH);
+   delay(timer);
+   digitalWrite(LED5, LOW);
+   delay(timer);
+   digitalWrite(LED5, HIGH);
+   delay(timer);
+   digitalWrite(LED5, LOW);
+   delay(longtimer);
+   
+  }  
+  
+   // check to see if all switches are on. If so, commence awesome flashing
+  
+  while (SW1state == HIGH && SW2state == HIGH && SW3state == HIGH && SW4state == HIGH && SW5state == HIGH ) 
+  
+  // if all switches on flash all 5 until a switch
+ {
 
    digitalWrite(LED1, HIGH);
    delay(timer);
@@ -114,6 +182,12 @@ void loop() {
    delay(timer);
    digitalWrite(LED5, LOW);
    delay(timer);
+   
+  SW1state = digitalRead(SW1); // read the state of switch 1
+  SW2state = digitalRead(SW2); // read the state of switch 2
+  SW3state = digitalRead(SW3); // read the state of switch 3
+  SW4state = digitalRead(SW4); // read the state of switch 4
+  SW5state = digitalRead(SW5); // read the state of switch 5
 }
   
   
