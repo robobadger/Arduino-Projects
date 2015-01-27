@@ -53,9 +53,9 @@ void loop() {
   
   SW1state = digitalRead(SW1); // read the state of switch 1
   SW2state = digitalRead(SW2); // read the state of switch 2
-  SW2state = digitalRead(SW3); // read the state of switch 3
-  SW2state = digitalRead(SW4); // read the state of switch 4
-  SW2state = digitalRead(SW5); // read the state of switch 5
+  SW3state = digitalRead(SW3); // read the state of switch 3
+  SW4state = digitalRead(SW4); // read the state of switch 4
+  SW5state = digitalRead(SW5); // read the state of switch 5
   
   // check to see if switch 1 is on. If so, commence flashing
   
@@ -65,16 +65,25 @@ void loop() {
    delay(timer);
    digitalWrite(LED1, LOW);
    delay(timer);
+   delay(timer);
+   delay(timer);
   }
 
 // check to see if switch 2 is on. If so, commence flashing
 
-  if (SW2state == HIGH) { // if switch 2 only on just flash LED 2
+  if (SW2state == HIGH) { // if switch 2 only on just flash LED 2 twice
   
    digitalWrite(LED2, HIGH);
    delay(timer);
    digitalWrite(LED2, LOW);
    delay(timer);
+   digitalWrite(LED2, HIGH);
+   delay(timer);
+   digitalWrite(LED2, LOW);
+   delay(timer);
+   delay(timer);
+   delay(timer);
+   
     
   }
         
