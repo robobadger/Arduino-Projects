@@ -13,7 +13,7 @@
  */
 
 // set 5 x LED pins (12-8), timer as an easy to change variable for flashing and 5 x Switch Pins (A0-A4)
-
+ 
 const int LED1 = 12;
 const int LED2 = 11;
 const int LED3 = 10;
