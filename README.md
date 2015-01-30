@@ -4,5 +4,4 @@ This is a program to run a child's toy with five switches. Activiating each swit
 
 When all switches are on then a more impressive *Knight Rider*-style effect occurs.
 
-Link to hardware on Autodesk 123D Circuits:
-http://123d.circuits.io/circuits/555791-mobile-toy
+The hardware design is [hosted](http://123d.circuits.io/circuits/555791-mobile-toy) on Autodesk's 123D Circuits.
