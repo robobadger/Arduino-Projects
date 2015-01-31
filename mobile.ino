@@ -71,6 +71,11 @@ void loop() {
 	}
 	// Pause before beginning the next cycle. Without this it's difficult to see how many times each LED is flashing when only one LED is lit.
 	delay(timerLong);
+	// Increment loopCount variable and print it to the serial monitor for logging.
+	loopCount = loopCount + 1;
+	Serial.print("Loop: ");
+	Serial.print(loopCount);
+	Serial.print("\n");
 }
 
 // 'Knight Rider' function
