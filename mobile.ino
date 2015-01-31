@@ -20,7 +20,7 @@ int switchCount = sizeof(switchPins)/sizeof(int);
 const int timerShortInitial = 300;
 // Set timerShort to timerShortInitial to begin with. timerShort will then be decreased every time we loop inside the 'Knight Rider' function.
 int timerShort = timerShortInitial;
-// Set timerLong to a multiple of the length of timerShort. It could also be manually defined.
+// Set timerLong to a multiple of the length of timerShort.
 int timerLongMultiplier = 2;
 int timerLong = timerShort * timerLongMultiplier;
 // Used to control the rate at which the timerShort value decays within repeating 'Knight Rider' loops.
