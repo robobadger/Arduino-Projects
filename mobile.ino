@@ -22,6 +22,8 @@ int timerLong = timerShort * 2; // Could be manually defined
 // Declare and define counting variables.
 // Used to count the number of switches set HIGH.
 int switchOnCount = 0;
+// Used to count the number of loops that the code has run through.
+int loopCount = 0;
 
 // Setup
 void setup() {
