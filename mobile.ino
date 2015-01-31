@@ -20,8 +20,13 @@ int switchCount = sizeof(switchPins)/sizeof(int);
 const int timerShortInitial = 300;
 // Set timerShort to timerShortInitial to begin with. timerShort will then be decreased every time we loop.
 int timerShort = timerShortInitial;
-// Set timerLong to twice the length of timerShort. It could also be manually defined.
-int timerLong = timerShort * 2;
+// Set timerLong to a multiple of the length of timerShort. It could also be manually defined.
+int timerLongMultiplier = 2;
+int timerLong = timerShort * timerLongMultiplier;
+// Used to control the rate at which the timerShort value decays within repeating 'Knight Rider' loops.
+// Larger values mean faster decays. Needs to be float because it contains a decmial point.
+// Using timerShortInitial = 300 ms and decayFactor = 0.15 means flashing is invisible to naked eye after twenty loops.
+const float decayFactor = 0.15;
 
 // Declare and define counting variables.
 // Used to count the number of switches set HIGH.
@@ -59,13 +64,19 @@ void loop() {
 		}
 	// If all switches are set LOW ...
 	else if (switchOnCount == 0) {
-		// ... then reset the timerShort value.
+		// ... then reset the timerShort value ...
 		timerShort = timerShortInitial;
+		timerLong = timerShort * timerLongMultiplier;
+		// ... and the knightRiderLoopCount value.
+		knightRiderLoopCount = 0;
 	}
 	// If the number of switches set HIGH is not equal to the number of switches then flash each LED the appropriate number of times.
 	else {
-		// Reset timerShort value before beginning flash sequence, because we don't want to use the value from the 'Knight Rider' sequence.
+		// Reset timerShort/timerLong values before beginning flash sequence, because we don't want to use the values from the 'Knight Rider' sequence.
 		timerShort = timerShortInitial;
+		timerLong = timerShort * timerLongMultiplier;
+		// And we also need to reset the knightRiderLoopCount value.
+		knightRiderLoopCount = 0;
 		// Loop through each switch.
 		for (int currentPin = 0; currentPin < switchCount; currentPin++) {
 			// If the switch is set HIGH ...
@@ -87,11 +98,15 @@ void knightRider() {
 		// Call the flashLED procedure with flashTimes = 1 for each LED in sequence.
 		flashLED(ledPins[currentPin], 1);
     	}
-	// Increment loop count.
-	knightRiderLoopCount = knightRiderLoopCount + 1;
-	Serial.print("KR loop: ");
-	Serial.print(knightRiderLoopCount);
-	Serial.print("\n");
+	// Calculate timerShort value for next loop.
+	// Calculate new exponent
+	float exponent = -1 * decayFactor * knightRiderLoopCount;
+	// Calculate new timerShort value. Using negative powers of two creates exponential decay rather than a step-like decrease.
+	// The "+1" term ensures timerShort and timerLong are never equal to zero.
+	timerShort = (timerShortInitial * (pow(2, exponent))) + 1;
+  	timerLong = (timerShort * timerLongMultiplier) + 1;
+	// Increment loop count. Putting it here, at the end of the loop, ensures that the first loop uses the initial timerShort/timerLong values.
+	knightRiderLoopCount = knightRiderLoopCount + 1;	
 }
 
 // Blink LED function
