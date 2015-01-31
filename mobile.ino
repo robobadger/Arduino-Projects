@@ -18,7 +18,7 @@ int switchCount = sizeof(switchPins)/sizeof(int);
 // Declare and define flash timing values.
 // timerShortIntial is our base flash timing value.
 const int timerShortInitial = 300;
-// Set timerShort to timerShortInitial to begin with. timerShort will then be decreased every time we loop.
+// Set timerShort to timerShortInitial to begin with. timerShort will then be decreased every time we loop inside the 'Knight Rider' function.
 int timerShort = timerShortInitial;
 // Set timerLong to a multiple of the length of timerShort. It could also be manually defined.
 int timerLongMultiplier = 2;
