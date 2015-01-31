@@ -16,8 +16,8 @@ int ledCount = sizeof(ledPins)/sizeof(int);
 int switchCount = sizeof(switchPins)/sizeof(int);
 
 // Declare and define flash timing values.
-const int timerShort = 300;
-const int timerLong = timerShort * 2; // Could be manually defined
+int timerShort = 300;
+int timerLong = timerShort * 2; // Could be manually defined
 
 // Declare and define counting variables.
 // Used to count the number of switches set HIGH.
