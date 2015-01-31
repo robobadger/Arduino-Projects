@@ -57,6 +57,11 @@ void loop() {
 		// ... then run the knightRider function.
 		knightRider();
 		}
+	// If all switchs are set LOW ...
+	else if (switchOnCount == 0) {
+		// ... then reset the timerShort value.
+		timerShort = timerShortInitial;
+	}
 	// If the number of switches set HIGH is not equal to the number of switches then flash each LED the appropriate number of times.
 	else {
 		// Loop through each switch.
