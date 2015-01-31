@@ -26,8 +26,8 @@ int timerLong = timerShort * 2;
 // Declare and define counting variables.
 // Used to count the number of switches set HIGH.
 int switchOnCount = 0;
-// Used to count the number of loops that the code has run through.
-int loopCount = 0;
+// Used to count the number of 'Knight Rider' loops.
+int knightRiderLoopCount = 0;
 
 // Setup
 void setup() {
@@ -87,6 +87,11 @@ void knightRider() {
 		// Call the flashLED procedure with flashTimes = 1 for each LED in sequence.
 		flashLED(ledPins[currentPin], 1);
     	}
+	// Increment loop count.
+	knightRiderLoopCount = knightRiderLoopCount + 1;
+	Serial.print("KR loop: ");
+	Serial.print(knightRiderLoopCount);
+	Serial.print("\n");
 }
 
 // Blink LED function
