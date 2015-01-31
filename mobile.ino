@@ -99,7 +99,7 @@ void knightRider() {
 		flashLED(ledPins[currentPin], 1);
     	}
 	// Calculate timerShort value for next loop.
-	// Calculate new exponent
+	// Calculate new exponent.
 	float exponent = -1 * decayFactor * knightRiderLoopCount;
 	// Calculate new timerShort value. Using negative powers of two creates exponential decay rather than a step-like decrease.
 	// The "+1" term ensures timerShort and timerLong are never equal to zero.
@@ -113,9 +113,8 @@ void knightRider() {
 // Turns the LED with pinNumber on and off the number of times specified by the flashTimes variable.
 void flashLED(int pinNumber, int flashTimes) {
   	for (int flashes = 0; flashes < flashTimes; flashes++) {
-		// Set the LED pin HIGH.
+		// Set the LED pin HIGH and wait.
 		digitalWrite(pinNumber, HIGH);
-      	// Wait
 		delay(timerShort);
   		// Set the LED pin back to LOW.
 		digitalWrite(pinNumber, LOW);
