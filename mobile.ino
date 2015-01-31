@@ -64,6 +64,8 @@ void loop() {
 	}
 	// If the number of switches set HIGH is not equal to the number of switches then flash each LED the appropriate number of times.
 	else {
+		// Reset timerShort value
+		timerShort = timerShortInitial;
 		// Loop through each switch.
 		for (int currentPin = 0; currentPin < switchCount; currentPin++) {
 			// If the switch is set HIGH ...
