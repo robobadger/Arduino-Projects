@@ -64,7 +64,7 @@ void loop() {
 	}
 	// If the number of switches set HIGH is not equal to the number of switches then flash each LED the appropriate number of times.
 	else {
-		// Reset timerShort value
+		// Reset timerShort value before beginning flash sequence, because we don't want to use the value from the 'Knight Rider' sequence.
 		timerShort = timerShortInitial;
 		// Loop through each switch.
 		for (int currentPin = 0; currentPin < switchCount; currentPin++) {
