@@ -57,7 +57,7 @@ void loop() {
 		// ... then run the knightRider function.
 		knightRider();
 		}
-	// If all switchs are set LOW ...
+	// If all switches are set LOW ...
 	else if (switchOnCount == 0) {
 		// ... then reset the timerShort value.
 		timerShort = timerShortInitial;
