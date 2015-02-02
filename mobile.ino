@@ -118,7 +118,7 @@ void flashLED(int pinNumber, int flashTimes) {
 		delay(timerShort);
   		// Set the LED pin back to LOW.
 		digitalWrite(pinNumber, LOW);
-      	// Wait. Without this delay, multiple flashes are not visible.
+      		// Wait. Without this delay, multiple flashes are not visible.
 		delay(timerShort);
     }
 }
